@@ -12,6 +12,10 @@ import requests
 #For running the application using FastAPI use the following:
 #uvicorn apimain:app --reload --host 0.0.0.0 --port 8000
 
+#For installing a specific package within a virtual environment:
+#python -m pip install <library>
+
+
 app = FastAPI()
 model = OllamaLLM(model="llama3.2")
 
