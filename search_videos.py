@@ -8,9 +8,9 @@ app = FastAPI()
 @app.get("/videos")
 async def search_channel_by_keyword(channel_id: str, keyword: str):
     videos = scrapetube.get_channel(channel_id=channel_id)
-    results = []
+    results = {}
     for v in videos:
-        #print(f"JSON: {v}")
+        print(f"JSON: {v}")
         title_data = v.get('title', {})
         # Safely get the text of the title
         title = ''
@@ -19,7 +19,7 @@ async def search_channel_by_keyword(channel_id: str, keyword: str):
 
         if keyword.lower() in title.lower():
             vid = v.get('videoId')
-            results.append(f"https://www.youtube.com/watch?v={vid}")
+            results[title.lower()]=f"https://www.youtube.com/watch?v={vid}"
     return {
         "results": results
     }
