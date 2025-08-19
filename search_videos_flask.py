@@ -53,6 +53,8 @@ def search_channel_by_keyword():
 #For accessing locally:
 #http://0.0.0.0:5001/videos?channel_id=UC-kBlBK4icUzAN-2amwIRQA&keyword=Tsuru
 #For pythonanywhere:
-#https://egutierrezb.pythonanywhere.com/videos?channel_id=UC-kBlBK4icUzAN-2amwIRQA&keyword=Tsuru
+#https://egutierrezb.pythonanywhere.com/apivideos/videos?channel_id=UC-kBlBK4icUzAN-2amwIRQA&keyword=Tsuru
+
+#For flask we only need to "run" as is the python file
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
